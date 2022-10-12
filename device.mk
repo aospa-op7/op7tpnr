@@ -6,7 +6,7 @@
 $(call inherit-product, device/oneplus/sm8150-common/common.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product, vendor/oneplus/oneplus7tpronr/oneplus7tpronr-vendor.mk)
+$(call inherit-product, vendor/oneplus/oneplus7tproNR/oneplus7tproNR-vendor.mk)
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -29,6 +29,14 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_r=7 \
     ro.com.google.ime.kb_pad_land_l=14 \
     ro.com.google.ime.kb_pad_land_r=14
+
+# Telephony
+PRODUCT_VENDOR_PROPERTIES += \
+    persist.vendor.ssr.restart_level=ALL_ENABLE \
+    persist.vendor.radio.5g=1 \
+    persist.vendor.radio.5g_mode_pref=1 \
+    persist.vendor.radio.5g_mode_pref_0=1 \
+    persist.vendor.radio.5g_mode_pref_1=1
 
 # Overlays
 PRODUCT_PACKAGES += \
